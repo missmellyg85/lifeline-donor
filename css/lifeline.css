@@ -1,0 +1,79 @@
+/* Service Icons */
+ul.icons {
+	list-style:none;
+	padding:0 140px;
+}
+
+.icons li {
+    display:inline-block;
+    width:25%;
+    text-align: center;
+}
+
+.icons li img {
+    height:100px;
+    width:100px;
+}
+
+img.group{margin:30px 0 0 0;}
+
+img.test{width:300px;margin-left:35px;}
+.test-blurb {width:calc(100% - 300px - 35px);};
+
+.programs {background-color: #ccf6cc;}
+.programs > img {width:100%;}
+
+img.community {width:650px;margin-left:35px;}
+.community-blurb {width:calc(100% - 650px - 35px);}
+
+img.counseling {width:270px;margin-right:35px;}
+.counseling-blurb {width:calc(100% - 270px - 35px);}
+
+.social-media {
+	text-align:right;
+}
+
+.contact-form .form-control {
+	display: block;
+	width: 100%;
+	height: 34px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	-webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.contact-form input[type=radio], .contact-form input[type=checkbox] {
+	margin: 0 4px 0 9px;
+	line-height: normal;
+}
+
+.contact-form .form-group {
+	margin-bottom:2em;
+}
+
+.contact-form < div {
+	margin:2em 0;
+}
+
+.contact-form div div {
+	height:2em;
+}
+
+.contact-form .error {color:#ff0000;}
+
+.contact .appointment-request {width:50%;
+}
+
+.contact .address-block {width:50%;}
+.contact .address-block > *{margin-left:40px;}
+.contact .address-block h3 {margin:0;}
+
+.content .hours > span {display:block;text-indent: 30px;}

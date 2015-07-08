@@ -1,0 +1,19 @@
+<div navigation></div>
+<div ng-controller="Lifeline">
+	<h1>Support Lifeline financially</h1>
+	<p>There are many ways to provide support to Lifeline in our mission of serving Christ through serving others.       
+	Monetary donations, material donations, volunteering, and prayer are just a few ways that you can help
+	us to  continue this ministry.  Please explore our site further to see what a difference our supporters and
+	volunteers make each and every day!</p>
+	
+	<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" class="paypal">
+		<input type="hidden" name="cmd" value="_s-xclick">
+		<input type="hidden" name="hosted_button_id" value="YU4ZL2SKUKCDU">
+		<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+		<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+	</form>
+
+	<p>Interested in becoming a monthly Partner for Life?  Please call {{info.phone}} to set up your monthly automatic contribution to be giving via bank draft, debit or credit card.</p>
+
+	<p>Contributions may also be dropped off at Lifeline during regular office hours ({{info.hours}}), or mailed to PO Box 663, Kirksville, MO 63501.</p>
+</div>

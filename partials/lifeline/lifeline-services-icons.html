@@ -1,0 +1,16 @@
+<ul class="icons" ng-model="service" ng-controller="Lifeline">
+    <li ng-click="serviceIconClick('tests')">
+        <img src="img/icons/services.png"/>
+        <p>Pregnancy Tests &amp; Ultrasounds</p>
+    </li><li ng-click="serviceIconClick('programs')">
+        <img src="img/icons/programs.png"/>
+        <p>Programs</p>
+    </li><li ng-click="serviceIconClick('referrals')">
+        <img src="img/icons/community.png"/>
+        <p>Community Referrals</p>
+    </li><li ng-click="serviceIconClick('counseling')">
+        <img src="img/icons/peer.png"/>
+        <p>Peer Counseling</p>
+    </li>
+</ul>
+<div ng-include="service" ng-show="allowDisplay"></div>

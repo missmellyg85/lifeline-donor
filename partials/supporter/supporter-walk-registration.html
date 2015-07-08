@@ -1,0 +1,88 @@
+<h3>Registration for Walk for Life 2015:</h3>
+<h3 class="success" ng-controller="Supporter">{{message}}</h3>
+<form name="regForm" ng-controller="Supporter" class="contact-form css-form" ng-submit="submitRegForm()" novalidate>
+	<div class="form-group">
+        I want to register as:
+        <label><input type="radio" name="individual" ng-model="reg.type" value="individual" ng-click="clearTeammates()" checked="checked"/>Individual</label>
+        <label><input type="radio" name="team" ng-model="reg.type" value="team" ng-click="initiateTeammates()" />Team of 4</label>
+    </div>
+    <div>
+        <label>First Name*:</label>
+        <input type="text" name="fname" class="form-control" ng-model="reg.fname" required />
+        <div>
+            <span ng-show="(regForm.fname.$invalid && submitted) || (errors.fname)" class="error inline">Your first name is required</span>
+        </div>
+    </div>
+    <div>
+        <label>Last Name*:</label>
+        <input type="text" name="lname" class="form-control" ng-model="reg.lname" required />
+        <div>
+            <span ng-show="(regForm.lname.$invalid && submitted) || (errors.lname)" class="error inline">Your last name is required</span>
+        </div>
+    </div>
+    <div>
+        <label>Address 1*:</label>
+        <input type="text" name="address1" class="form-control" ng-model="reg.address1" required />
+        <div>
+            <span ng-show="(regForm.address1.$invalid && submitted) || (errors.address1)" class="error inline">Your address is required</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Address 2:</label>
+        <input type="text" name="address2" class="form-control" ng-model="reg.address2" />
+    </div>
+    <div>
+        <label>City*:</label>
+        <input type="text" name="city" class="form-control" ng-model="reg.city" required />
+        <div>
+            <span ng-show="(regForm.city.$invalid && submitted) || (errors.city)" class="error inline">Your city is required</span>
+        </div>
+    </div>
+    <div>
+        <label>State*:</label>
+        <input type="text" name="state" class="form-control" ng-model="reg.state" required />
+        <div>
+            <span ng-show="(regForm.state.$invalid && submitted) || (errors.state)" class="error inline">Your state is required</span>
+        </div>
+    </div>
+    <div>
+        <label>Zip Code*:</label>
+        <input type="text" name="zip" class="form-control" ng-model="reg.zip" required />
+        <div>
+            <span ng-show="(regForm.zip.$invalid && submitted) || (errors.zip)" class="error inline">Your zip code is required</span>
+        </div>
+    </div>
+    <div>
+        <label>Daytime Phone*:</label>
+        <input type="text" name="phone" class="form-control" ng-model="reg.phone" required />
+        <div>
+            <span ng-show="(regForm.phone.$invalid && submitted) || (errors.phone)" class="error inline">Your phone number is required</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Email:</label>
+        <input type="email" name="email" class="form-control" ng-model="reg.email" />
+    </div>
+ <!--    <div class="form-group">
+        <label>Church:</label>
+        <input type="text" name="church" class="form-control" ng-model="reg.church" />
+    </div> -->
+    <div ng-show="reg.type == 'team'" class="form-group">
+    	<b>Team members:</b>
+    	<table style="width:100%">
+    		<tr><td>First name</td><td>Last name</td></tr>
+    		<tr ng-repeat="n in [1,2,3]">
+    			<td><input type="text" name="teammate{{n}}.fname" class="form-control" ng-model="reg.teammate[n-1].fname" /></td>
+    			<td><input type="text" name="teammate{{n}}.lname" class="form-control" ng-model="reg.teammate[n-1].lname" /></td>
+    		</tr>
+    	</table>
+    </div>
+    <div ng-show="reg.type == 'team'" class="form-group">
+    	<label>Team Name:</label>
+        <input type="text" name="teamname" class="form-control" ng-model="reg.teamname" />
+    </div>
+	<div class="inline">
+        <button type="submit">Submit</button>
+    </div><span class="error inline" ng-show="submitted && regForm.$invalid">Please correct errors</span>
+    <h3 class="success">{{message}}</h3>
+</form>
