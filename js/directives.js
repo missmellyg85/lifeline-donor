@@ -32,7 +32,7 @@ angular.module('myApp.directives', [])
   })
   .directive('navigation', function() {
     return {
-      templateUrl: 'partials/supporter/supporter-nav.html'
+      templateUrl: 'partials/supporter/supporter-nav.html?101215'
     }
   })
-; 
+;
