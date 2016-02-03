@@ -158,6 +158,10 @@ div.s_navigation {
 	margin-left:40%;
 }
 
+img.group {
+	width:100%;
+}
+
 /* YouTube player */
 #ytplayer {	margin-left:calc((100% - 640px) / 2);}
 .ytsubscribe {float:right;}
