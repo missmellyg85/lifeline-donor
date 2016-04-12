@@ -123,7 +123,7 @@ function sendRegistration($posted){
     $to_email = "lifelineprc@sbcglobal.net";
 
 
-    $subject = "New Walk for Life 2015 Registration";
+    $subject = "New Walk for Life 2016 Registration";
 
     $message = "A new registration has been submitted through the website.\n\n";
 

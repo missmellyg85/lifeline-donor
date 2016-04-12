@@ -109,9 +109,7 @@ myAppControllers.controller('Supporter', ['$scope', '$routeParams', '$location',
         }
     }
     $scope.submitRegForm = function() {
-        console.log("Submit reg form");
         $scope.submitted = true;
-        console.log($scope.reg);
         if($scope.regForm.$valid) {
             $http({
                 url: "process.php?type=reg",
