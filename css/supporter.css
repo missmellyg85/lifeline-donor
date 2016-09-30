@@ -133,9 +133,9 @@ div.s_navigation {
 }
 
 .event {
+	clear:both;
 	margin-bottom:40px;
 }
-
 
 .event .walk img {
 	width:460px;

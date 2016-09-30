@@ -5,6 +5,33 @@
 		<p>Our fundraising events take place three times throughout the year, providing a variety of ways to give and get involved in Lifeline's ministry.</p>
 
 		<div class="event">
+			<h3>Fundraising Banquet</h3>
+			<div class="half-width" style="float:left;">
+				<p>Our Annual Fundraising Banquet "Life's Journey" will be held on<br>
+					November 10 and 11, 2016<br>
+					6:00-8:00pm<br>
+					Truman State University Georgian Room<br>
+					RSVP is required to attend. Please RSVP by November 3, 1016 by noon.</p>
+
+				<a ng-click="showRsvp=true" ng-hide="showRsvp"><strong>Click here to RSVP</strong></a>
+				<div ng-include="'partials/supporter/templates/banquet-rsvp.html'" ng-show="showRsvp" style="margin-right:15px"></div>
+				<img ng-hide="showRsvp" src="img/banquet.png"/>
+
+			</div>
+			<div class="half-width" style="float:right;">
+
+
+				<p><strong>Keynote Speaker Dr. Marc Newman</strong></p>
+				<p><img style="width:200px;float:right;border:solid black; margin-left:5px;" src="img/MarcNewman.jpg">Dr. Marc Newman is president of Speaker For Life, a training firm dedicated to equipping pro-life advocates nationwide with public speaking skills. He has spoken at nearly every major pro-life convention in the nation.</p>
+				<p>He is the former Director of Speech and Debate at the University of California at Irvine, and recently retired from teaching in the doctoral program in the School of Communication and the Arts at Regent University. He is a founding faculty member of the new Applied Bioethics program at Oklahoma Wesleyan University.</p>
+				<p>He has trained speakers in the public and private sectors for over twenty-five years.</p>
+				<p>In addition to teaching, he heads MovieBibleStudy.com – a site that helps Christians use movies to reach out to others.</p>
+				<p>He has appeared on The O’Reilly Factor, and in Time magazine. He lives in North San Diego County in California with his wife, Sharon, and their youngest son, Joel.</p>
+			</div>
+			<div style="clear:both"></div>
+		</div>
+
+		<div class="event">
 			<h3>Walk for Life</h3>
 			<p>Thank you for another great Walk for Life! We will announce dates for our next
 				walk early next year!</p>
@@ -14,15 +41,5 @@
 			<h3>Baby Bottle Blessing</h3>
 			<p>Thank you for all of your support!The Annual Baby Bottle Blessing Campaign will pick up again early in 2017.
 		</div>
-
-
-
-		<div class="event">
-			<h3>Fundraising Banquet</h3>
-			<p>Our Annual Fundraising Banquet was held November 5 and 6, 2015, and was
-				a great success with over 600 people attending over the two nights.
-				We will be posting information on the 2016 banquet very soon!</p>
-		</div>
-
 	</div>
 </div>

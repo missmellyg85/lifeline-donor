@@ -1,0 +1,57 @@
+<form name="banquetRSVPForm" class="contact-form css-form well" ng-submit="submitRSVPForm()" novalidate ng-controller="Supporter">
+    <div>
+        <label>Name*:</label>
+        <input type="text" name="name" class="form-control" ng-model="rsvp.name" required />
+        <div>
+            <span ng-show="(rsvpbanquetRSVPForm.name.$invalid && submitted) || (errors.name)" class="error inline">Your name is required</span>
+        </div>
+    </div>
+    <div>
+        <label>Night Attending*:</label>
+        <div class="radio">
+            <label>
+                <input type="radio" name="nightAttending" id="optionsRadios1" ng-model="rsvp.nightAttending" value="Thursday" checked>
+                Thursday, November 10
+            </label>
+        </div>
+        <div class="radio">
+            <label>
+                <input type="radio" name="nightAttending" id="optionsRadios2" ng-model="rsvp.nightAttending" value="Friday">
+                Friday, November 11
+            </label>
+        </div>
+        <div>
+            <span ng-show="rsvpbanquetRSVPForm.nightAttending.$pristine && submitted" class="error inline">Please select a date</span>
+        </div>
+    </div>
+    <div>
+        <label>Number of Guests (including yourself)*:</label>
+        <input type="text" name="numberGuests" class="form-control" ng-model="rsvp.numberGuests" required />
+        <div>
+            <span ng-show="rsvpbanquetRSVPForm.numberGuests.$pristine && submitted" class="error inline">Please include number of guests</span>
+        </div>
+    </div>
+    <div>
+        <label>Email*:</label>
+        <input type="email" name="email" class="form-control" ng-model="rsvp.email" required />
+        <div>
+            <span ng-show="rsvpbanquetRSVPForm.email.$pristine && submitted" class="error inline">Your email is required</span>
+            <span ng-show="rsvpbanquetRSVPForm.email.$invalid && rsvpbanquetRSVPForm.email.$dirty && submitted" class="error inline">Please enter a valid email</span>
+        </div>
+    </div>
+    <div>
+        <label>Phone*:</label>
+        <input type="text" name="phone" class="form-control" ng-model="rsvp.phone" required />
+        <div>
+            <span ng-show="(rsvpbanquetRSVPForm.phone.$invalid && submitted) || (errors.phone)" class="error inline">Your phone is required</span>
+        </div>
+    </div>
+    <div>
+        <label>Dietary Restrictions (optional):</label>
+        <input type="text" name="dietary" class="form-control" ng-model="rsvp.dietary" required />
+    </div>
+    <h3 class="success">{{message}}</h3>
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+</form>

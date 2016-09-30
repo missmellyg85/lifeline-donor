@@ -81,6 +81,48 @@ myAppControllers.controller('Supporter', ['$scope', '$routeParams', '$location',
                 });
         };
     };
+      
+    $scope.submitRSVPForm = function() {
+        $scope.banquetRSVPForm.submitted = true;
+        if ($scope.banquetRSVPForm.$valid) {
+            /*
+             name
+             nightAttending
+             numberGuests
+             email
+             phone
+             dietary
+             */
+            console.log($scope.rsvp)
+            $http({
+                url: "process.php?type=banquet",
+                method: "POST",
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                data: 'formData=' + angular.toJson($scope.rsvp),
+                accept: 'application/json'
+            })
+                .success(function(data) {
+                    if (data.errors) {
+                        $scope.errors = [];
+                        for(var error in data.errors) {
+                            $scope.errors[error] = true;
+                        }
+                    } else if(data.error) {
+                        $scope.error = data.error;
+                    } else {
+                        // if successful, bind success message to message and set form to pristine
+                        $scope.message = data.message;
+                        $scope.banquetRSVPForm.$setPristine();
+                        $scope.banquetRSVPForm.submitted = false;
+                        $scope.rsvp = {};
+                        // $scope.showRsvp = false;
+                    }
+                })
+                .error(function(data) {
+
+                });
+        };
+    };
 
     $scope.allowDisplay = false;
     $scope.assignDisplayAllowance = function() {

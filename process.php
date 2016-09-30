@@ -17,6 +17,9 @@ switch($type) {
     case "volunteer":
         $rdata = process_volunteer($pdata);
         break;
+    case "banquet":
+        $rdata = process_banquet($pdata);
+        break;
     default:
         return false;
 }
@@ -203,37 +206,93 @@ function process_volunteer($pdata) {
 
 function sendVolunteerRequest($posted){
 
-    /* All form fields are automatically passed to the PHP script through the array $HTTP_POST_VARS. */
-    // $to_email = "missywilliams85@gmail.com";
-    $to_email = "lifelineprc@sbcglobal.net";
+     /* All form fields are automatically passed to the PHP script through the array $HTTP_POST_VARS. */
+     // $to_email = "missywilliams85@gmail.com";
+     $to_email = "lifelineprc@sbcglobal.net";
 
-    $type = $posted['type'];
+     $type = $posted['type'];
 
-    $subject = "A new request has been submitted through the website!";
-    if($type == "volunteer") {
-        $subject = "Someone is interested in becoming a volunteer!";
-        $message = "A request for information about volunteering has been submitted through the website.\n\n";
-    } elseif ($type == "board") {
-        $subject = "You have a new request to learn more about the Board of Directors!";
-        $message = "A request for information about the Board of Directors has been submitted through the website.\n\n";
-    }
+     $subject = "A new request has been submitted through the website!";
+     if($type == "volunteer") {
+         $subject = "Someone is interested in becoming a volunteer!";
+         $message = "A request for information about volunteering has been submitted through the website.\n\n";
+     } elseif ($type == "board") {
+         $subject = "You have a new request to learn more about the Board of Directors!";
+         $message = "A request for information about the Board of Directors has been submitted through the website.\n\n";
+     }
 
-    $message .= "Name: ".$posted['name'];
-    $message .= "\nEmail: ".$posted['email'];
-    $message .= "\nAddress: ".$posted['address'];
-    $message .= "\nPhone: ".$posted['phone'];
+     $message .= "Name: ".$posted['name'];
+     $message .= "\nEmail: ".$posted['email'];
+     $message .= "\nAddress: ".$posted['address'];
+     $message .= "\nPhone: ".$posted['phone'];
 
-    if($type == "volunteer"){
-        $message .= "\nType of service preferred: ".$posted['serviceType'];
-    }
+     if($type == "volunteer"){
+         $message .= "\nType of service preferred: ".$posted['serviceType'];
+     }
 
-    //$additional_headers = 'From: New Appointment Request <donotreply@lifeline.com>';
+     //$additional_headers = 'From: New Appointment Request <donotreply@lifeline.com>';
 
-    // Sends the mail and outputs the "Thank you" string if the mail is successfully sent, or the error string otherwise. */
-    if (mail($to_email,$subject,$message)) {
-      return true;
-    } else {
-      return false;
-    }
-}
+     // Sends the mail and outputs the "Thank you" string if the mail is successfully sent, or the error string otherwise. */
+     if (mail($to_email,$subject,$message)) {
+       return true;
+     } else {
+       return false;
+     }
+ }
+
+ function process_banquet($pdata) {
+     $errors = array();
+     $data = array();
+
+     // validate the variables
+     if (empty($pdata['name']))
+             $errors['name'] = 'Name is required.';
+
+     if (empty($pdata['email']))
+             $errors['email'] = 'Email is required.';
+
+     // response if there are errors
+     if (!empty($errors)) {
+         // if there are items in our errors array, return those errors
+         $data['success'] = false;
+         $data['errors']  = $errors;
+     } else {
+         // create and send off email
+         if(sendBanquetRequest($pdata)){
+             // if the email sent and there are no errors, return a message
+             $data['success'] = true;
+             $data['message'] = 'Request has been submitted!';
+         } else {
+             // if the email could not send, return a message
+             $data['success'] = false;
+             $data['error'] = 'Request could not be sent';
+         }
+     }
+
+     return $data;
+ }
+
+ function sendBanquetRequest($posted){
+     /* All form fields are automatically passed to the PHP script through the array $HTTP_POST_VARS. */
+     $to_email = "missywilliams85@gmail.com";
+     //$to_email = "lifelineprc@sbcglobal.net";
+
+     $subject = "A banquet RSVP has been submitted through the website!";
+
+     $message = "Name: ".$posted['name'];
+     $message .= "\nNight Attending: ".$posted['nightAttending'];
+     $message .= "\nNumber of Guests: ".$posted['numberGuests'];
+     $message .= "\nEmail: ".$posted['email'];
+     $message .= "\nPhone: ".$posted['phone'];
+     $message .= "\nDietary Restrictions: ".$posted['dietary'];
+
+     //$additional_headers = 'From: New Appointment Request <donotreply@lifeline.com>';
+
+     // Sends the mail and outputs the "Thank you" string if the mail is successfully sent, or the error string otherwise. */
+     if (mail($to_email,$subject,$message)) {
+       return true;
+     } else {
+       return false;
+     }
+ }
 ?>
