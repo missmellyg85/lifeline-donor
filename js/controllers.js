@@ -4,8 +4,8 @@
 
 var myAppControllers = angular.module('myAppControllers', []);
 
-myAppControllers.controller('Lifeline', ['$scope', '$routeParams', '$location',
-    function($scope, $routeParams, $location) {
+myAppControllers.controller('Lifeline', ['$scope', '$routeParams', '$location', 'blog',
+    function($scope, $routeParams, $location, blog) {
         $scope.info = {
             name: 'Lifeline Pregnancy Help Clinic',
             street: '1515 N. New Street',
@@ -17,6 +17,7 @@ myAppControllers.controller('Lifeline', ['$scope', '$routeParams', '$location',
             supporterUrl: 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YU4ZL2SKUKCDU',
             hours: 'M-W 9:00am - 5:00pm, Th 10:00am-6:00pm'
             };
+        $scope.blogResponse = blog();
     }]);
 
 myAppControllers.controller('MainCtrl', ['$scope', '$route', '$routeParams', '$location',

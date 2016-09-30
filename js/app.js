@@ -32,6 +32,7 @@ config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/supporter-new-projects', {templateUrl: 'partials/supporter/supporter-new-projects.html', controller: 'Supporter'});
   $routeProvider.when('/supporter-learn-more', {templateUrl: 'partials/supporter/supporter-learn-more.html', controller: 'Supporter'});
   $routeProvider.when('/supporter-get-involved', {templateUrl: 'partials/supporter/supporter-get-involved.html', controller: 'Supporter'});
+  $routeProvider.when('/blog', {templateUrl: 'partials/lifeline/blog.html', controller: 'Lifeline'})
   
   $routeProvider.otherwise({redirectTo: '/index'});
 }])

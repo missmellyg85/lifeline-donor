@@ -13,5 +13,16 @@ angular.module('myApp.services', [])
         'image6.jpg',
         'image3.jpg',
         'image2.jpg'
-    ]);
+    ])
+    .factory('blog', ['$http', function($http) {
+            return function() {
+                    $http({method: 'GET', url: 'http://www.melissaleann.com'})
+                    .success(function(data){
+                        return data;
+                    })
+                .error(function(){
+                        return "<h1>Wow, it didn't work. That stinks</h1>";
+                })
+            }
+    }]);
   
