@@ -3,7 +3,7 @@
         <label>Name*:</label>
         <input type="text" name="name" class="form-control" ng-model="rsvp.name" required />
         <div>
-            <span ng-show="(rsvpbanquetRSVPForm.name.$invalid && submitted) || (errors.name)" class="error inline">Your name is required</span>
+            <span ng-show="(banquetRSVPForm.name.$invalid && banquetRSVPForm.submitted) || (errors.name)" class="error inline">Your name is required</span>
         </div>
     </div>
     <div>
@@ -21,29 +21,29 @@
             </label>
         </div>
         <div>
-            <span ng-show="rsvpbanquetRSVPForm.nightAttending.$pristine && submitted" class="error inline">Please select a date</span>
+            <span ng-show="banquetRSVPForm.nightAttending.$pristine && banquetRSVPForm.submitted" class="error inline">Please select a date</span>
         </div>
     </div>
     <div>
         <label>Number of Guests (including yourself)*:</label>
         <input type="text" name="numberGuests" class="form-control" ng-model="rsvp.numberGuests" required />
         <div>
-            <span ng-show="rsvpbanquetRSVPForm.numberGuests.$pristine && submitted" class="error inline">Please include number of guests</span>
+            <span ng-show="banquetRSVPForm.numberGuests.$pristine && banquetRSVPForm.submitted" class="error inline">Please include number of guests</span>
         </div>
     </div>
     <div>
         <label>Email*:</label>
         <input type="email" name="email" class="form-control" ng-model="rsvp.email" required />
         <div>
-            <span ng-show="rsvpbanquetRSVPForm.email.$pristine && submitted" class="error inline">Your email is required</span>
-            <span ng-show="rsvpbanquetRSVPForm.email.$invalid && rsvpbanquetRSVPForm.email.$dirty && submitted" class="error inline">Please enter a valid email</span>
+            <span ng-show="banquetRSVPForm.email.$pristine && banquetRSVPForm.submitted" class="error inline">Your email is required</span>
+            <span ng-show="banquetRSVPForm.email.$invalid && banquetRSVPForm.email.$dirty && banquetRSVPForm.submitted" class="error inline">Please enter a valid email</span>
         </div>
     </div>
     <div>
         <label>Phone*:</label>
         <input type="text" name="phone" class="form-control" ng-model="rsvp.phone" required />
         <div>
-            <span ng-show="(rsvpbanquetRSVPForm.phone.$invalid && submitted) || (errors.phone)" class="error inline">Your phone is required</span>
+            <span ng-show="(banquetRSVPForm.phone.$invalid && banquetRSVPForm.submitted) || (errors.phone)" class="error inline">Your phone is required</span>
         </div>
     </div>
     <div>
