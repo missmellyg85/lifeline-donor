@@ -36,8 +36,8 @@ myAppControllers.controller('Supporter', ['$scope', '$routeParams', '$location',
             showVolunteerOptions: 'true',
             blurb: 'To have a volunteer application sent to you, please fill out the form below:',
             options: [
-                {name: 'Peer Counselor'}, 
-                {name: 'DadLINE Mentor'}, 
+                {name: 'Peer Counselor'},
+                {name: 'DadLINE Mentor'},
                 {name: 'Special Projects Only'}
             ],
             volunteerType: 'volunteer'
@@ -81,7 +81,7 @@ myAppControllers.controller('Supporter', ['$scope', '$routeParams', '$location',
                 });
         };
     };
-      
+
     $scope.submitRSVPForm = function() {
         $scope.banquetRSVPForm.submitted = true;
         if ($scope.banquetRSVPForm.$valid) {
@@ -93,7 +93,6 @@ myAppControllers.controller('Supporter', ['$scope', '$routeParams', '$location',
              phone
              dietary
              */
-            console.log($scope.rsvp)
             $http({
                 url: "process.php?type=banquet",
                 method: "POST",

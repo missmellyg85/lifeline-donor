@@ -274,8 +274,8 @@ function sendVolunteerRequest($posted){
 
  function sendBanquetRequest($posted){
      /* All form fields are automatically passed to the PHP script through the array $HTTP_POST_VARS. */
-     $to_email = "missywilliams85@gmail.com";
-     //$to_email = "lifelineprc@sbcglobal.net";
+     //$to_email = "missywilliams85@gmail.com";
+     $to_email = "lifelineprc@sbcglobal.net";
 
      $subject = "A banquet RSVP has been submitted through the website!";
 
