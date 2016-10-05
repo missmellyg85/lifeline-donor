@@ -29,7 +29,7 @@ myAppControllers.controller('MainCtrl', ['$scope', '$route', '$routeParams', '$l
 
 myAppControllers.controller('Supporter', ['$scope', '$routeParams', '$location', '$http',
   function($scope, $routeParams, $location, $http) {
-    $scope.navigation = "partials/supporter/supporter-nav2.html";
+    $scope.navigation = "partials/supporter/supporter-nav.html";
 
     $scope.volunteerFormInfo = {
         volunteer: {
